@@ -12,6 +12,8 @@ body{
     color: #fff;
 }
 
+ /*HEADER SECTION*/
+
 .header{
     position: fixed;
     top: 0;
@@ -25,32 +27,66 @@ body{
     z-index: 100;
     transition: .3s;
 }
+/* Header container */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 20px;
+    background: #081b29;
+    color: #fff;
+}
 
 .header .sticky{
     background: #081b29;
 }
+                    
+ /*Light Mode*/
+                    
+ body.light-mode .header {
+   background: #fff;
+}
+                    
 
-.logo{
-    font-size: 26px;
+/* LOGO */
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
     color: #fff;
     text-decoration: none;
-    font-weight: 600;
 }
 
-.logo::before{
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 0;
-    height: 100%;
-    background: #081b29;
-    animation: showRight 1s ease forwards;
-    animation-delay: .4s;
+
+/*Light Mode*/
+body.light-mode .logo {
+    color: #081b29;
+}
+
+
+
+/* NAVBAR LINKS */
+
+.navbar {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.navbar a:hover,
+.navbar a.active {
+    color: #00abf0;
 }
 
 .navbar a{
     font-size: 20px;
+    margin-top: 5px;
     color: #fff;
     text-decoration: none;
     font-weight: 500;
@@ -62,6 +98,77 @@ body{
 .navbar a.active{
     color: #00abf0;
 }
+
+/*Light Mode*/
+
+body.light-mode .navbar a {
+    color: #000;
+}
+
+body.light-mode .navbar a:hover,
+body.light-mode .navbar a.active {
+    color: #00abf0;
+}
+
+
+    /*TOGGLE ICON*/
+
+#mode-toggle {
+    font-size: 16px;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    transition: 0.3s;
+} 
+#mode-toggle {
+    font-size: 20px;
+    color: #fff;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#mode-toggle i {
+    font-size: 20px;
+    transition: 0.3s;
+}
+
+#mode-toggle:hover {
+    color: #00abf0;
+}
+
+/* Hide the menu-toggle button initially */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+}
+
+  /* Light Mode*/
+
+body.light-mode #mode-toggle i {
+    color: #081b29;
+}
+
+body.light-mode #mode-toggle {
+    color: #fff;
+}
+
+body.light-mode {
+    background: #f0f0f0;
+    color: #000;
+}
+
+
+
+
+             /* HOME SECTION */
 
 .home{
     height: 106vh;
@@ -149,7 +256,8 @@ body{
     z-index: 2s;
 }
 
-/* BUTTONS */
+
+                     /* BUTTONS */
 
 .button a{
     position: relative;
@@ -191,7 +299,9 @@ body{
     color: #081b29;
 }
 
-/* SOCIAL MEDIA ICONS */
+
+
+                    /* SOCIAL MEDIA ICONS */
 
 .social {
     position: absolute;
@@ -276,8 +386,9 @@ body{
     object-fit: cover;
 }
 
-/* ABOUT */
 
+
+/* ABOUT */
 
 .about{
     display: flex;
@@ -351,7 +462,20 @@ span{
     background: #0b2c44;
 } 
 
-/* EDUCATION SECTION */
+/*Light Mode*/
+
+body.light-mode .about {
+    background: #024372;
+}
+
+body.light-mode .about-content p, 
+body.light-mode .about h3,
+body.light-mode .about h2{
+    color: #fff;
+}
+
+
+                   /* EDUCATION SECTION */
 
 .education{
     display: flex;
@@ -425,19 +549,32 @@ span{
 
 
 .education-content .content .year{
-    font-size: 1rem;
+    font-size: 1.5rem;
     color: #00abf0;
     padding-bottom: .5rem;
 }
 
-/* SKILLS SECTION  */
+/*Light Mode*/
+
+body.light-mode .education .content:hover::before {
+    background: #d5ebfa;
+    z-index: -1;
+    transition: .3s;
+}
+
+
+
+                  /* SKILLS SECTION  */
 
 .skills{
     min-height: auto;
-    padding-bottom: 7rem;
     background: #012c49;
     padding-left: 400px;
     padding-right: 400px;
+}
+
+.skills .skills-box{
+    margin-bottom: 80px;
 }
 
 .skills .skills-row{
@@ -514,11 +651,11 @@ span{
 }
 
 .skills-content .progress:nth-child(2) .bar span{
-    width: 90%;
+    width: 80%;
 }
 
 .skills-content .progress:nth-child(3) .bar span{
-    width: 30%;
+    width: 90%;
 }
 
 .skills-content .progress:nth-child(4) .bar span{
@@ -529,15 +666,22 @@ span{
     width: 80%;
 }
 
-.skills-content .progress:nth-child(6) .bar span{
-    width: 60%;
+
+/*Light Mode*/
+
+body.light-mode .skills {
+    background: #024372;
 }
 
-.skills-content .progress:nth-child(7) .bar span{
-    width: 80%;
+body.light-mode .skills-content p, 
+body.light-mode .skills h3,
+body.light-mode .skills h2{
+    color: #fff;
 }
+               
 
-               /* Contact section */
+
+                    /* CONTACT SECTION */
 
 .contact{
     min-height: auto;
@@ -602,7 +746,8 @@ span{
     cursor: pointer;
 }
 
-                   /* Footer section */
+   
+   /* FOOTER SECTION */
 
 .footer{
     display: flex;
@@ -663,6 +808,18 @@ span{
     color: #00abf0;
 }
 
+/*Light Mode*/
+
+body.light-mode .footer {
+    background: #024372;
+}
+
+body.light-mode .footer-text p {
+    color: #d5ebfa;
+}
+
+
+/*Responsive*/
 
 @media (max-width: 1200px){
     html{
@@ -719,4 +876,3 @@ span{
         margin: 3rem 0;
     }
 }
-
